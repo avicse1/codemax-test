@@ -18,7 +18,7 @@ class CarController extends Controller
 
     public function store(Request $request) {
         $validatedData = $request->validate([
-            'manufacturer' => 'required',
+            'manufacturer' => 'required|not_in:0',
             'model_name' => 'required',
             'color' => 'required',
             'manufacturing_year' => 'required|numeric',
