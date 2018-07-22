@@ -11,11 +11,11 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return redirect()->route('show_manufacturer');
+});
 
-Route::get('/', 'HomeController@show')->name('show_manufacturer');
+Route::get('add-manufacturer', 'HomeController@show')->name('show_manufacturer');
 Route::post('add-manufacturer', 'HomeController@store')->name('store_manufacturer');
 Route::get('cars', 'CarController@show')->name('show_cars');
 Route::post('cars', 'CarController@store')->name('store_cars');
