@@ -72,7 +72,16 @@
                             <div class="col-md-8">
                                 <p>{{$inventory->car->description}}</p>
                             </div>
+                            <div class="col-md-12">
+                                <label>Images</label>
+                            </div>
+                            @foreach($inventory->car->images as $image)
+                                <div class="col-md-6">                                
+                                    <img width="250" src="{{asset('images').'/'.$image->image}}" alt="">
+                                </div>
+                            @endforeach
                         </div>
+                        <div class="clearfix"></div>
                         <div class="modal-footer">
                             <a class="btn btn-success btn-lg" href="{{route('sold', ['id' =>$inventory->id ])}}">Sold</a> 
                         </div>

@@ -68,10 +68,4 @@
             <button type="submit" class="btn btn-primary">Add Models</button>
         </form>
     </div>
-    <script>
-    // (function(){
-    //     var options = {};
-    //     $('.js-uploader__box').uploader(options);
-    // }());
-    </script>
 @endsection
