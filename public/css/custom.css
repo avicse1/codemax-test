@@ -11,3 +11,9 @@
 .navbar-inverse {
     border-radius: 0 !important;
 }
+.table-row {
+    cursor: pointer;
+}
+.modal-footer {
+    border-top: none !important;
+}

@@ -19,7 +19,7 @@ class CreateInventoriesTable extends Migration
             $table->foreign('car_id')->references('id')->on('cars');
             $table->unsignedInteger('manufacturer_id');
             $table->foreign('manufacturer_id')->references('id')->on('manufacturers');
-            $table->unsignedInteger('count');
+            $table->unsignedInteger('count')->default(0);
             $table->timestamps();
         });
     }

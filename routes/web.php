@@ -20,3 +20,4 @@ Route::post('add-manufacturer', 'HomeController@store')->name('store_manufacture
 Route::get('cars', 'CarController@show')->name('show_cars');
 Route::post('cars', 'CarController@store')->name('store_cars');
 Route::get('inventory', 'InventoryController@index')->name('inventory');
+Route::get('sold/{id}', 'InventoryController@sold')->name('sold');

@@ -38,12 +38,12 @@ class CarController extends Controller
 
         $inventory->car_id = $car->id;
         $inventory->manufacturer_id = $request->manufacturer;
-        $inventory->count = 1;
+        $inventory->count += 1;
 
         $inventory->save();
 
         Session::flash('success', 'Model added successfully!');
-        
+
         return redirect()->back();
     }
 }
