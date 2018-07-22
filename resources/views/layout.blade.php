@@ -18,10 +18,13 @@
         <div class="collapse navbar-collapse pull-right" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item {{Request::is('/') ? 'active' : ''}}">
-                    <a class="nav-link" href="#">Manufacturer</a>
+                    <a class="nav-link" href="{{route('show_manufacturer')}}">Manufacturer</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Car models</a>
+                <li class="nav-item {{Request::is('cars') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('show_cars')}}">Cars</a>
+                </li>
+                <li class="nav-item {{Request::is('inventory') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('inventory')}}">Inventory</a>
                 </li>
             </ul>
         </div>
