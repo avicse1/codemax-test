@@ -4,7 +4,7 @@
         <h2>
             Add Cars
         </h2>
-        <form method="POST" action="{{route('store_cars')}}" enctype="multipart/form-data">
+        <form method="POST" action="{{route('store_cars')}}" accept-charset="UTF-8" enctype="multipart/form-data">
             @csrf
             <div class="col-md-6 form-group">
                 <label>Manufacturer</label>
@@ -26,28 +26,28 @@
                 <input type="text" class="form-control" name="model_name" id="model_name" placeholder="Enter model name" value="{{old('model_name')}}">
             </div>
                 
-            <div class="col-md-3 form-group">
+            <div class="col-md-6 form-group">
                 <label>Color</label>
                 @if ($errors->has('color'))
                 <span class="has-error error-position">{{ $errors->first('color') }}</span>
                 @endif
                 <input type="text" class="form-control" name="color" id="color" placeholder="Enter color" value="{{old('color')}}">
             </div>
-            <div class="col-md-3 form-group">
+            <div class="col-md-6 form-group">
                 <label>Manufacturing year</label>
                 @if ($errors->has('manufacturing_year'))
                 <span class="has-error error-position">{{ $errors->first('manufacturing_year') }}</span>
                 @endif
                 <input type="text" class="form-control" name="manufacturing_year" id="manufacturing_year" placeholder="Enter Manufacturing Year" value="{{old('manufacturing_year')}}">
             </div>
-            <div class="col-md-3 form-group">
+            <div class="col-md-6 form-group">
                 <label>Registration number</label>
                 @if ($errors->has('registration_number'))
                 <span class="has-error error-position">{{ $errors->first('registration_number') }}</span>
                 @endif
                 <input type="text" class="form-control" name="registration_number" id="registration_number" placeholder="Enter registration number" value="{{old('registration_number')}}">
             </div>
-            <div class="col-md-3 form-group">
+            <div class="col-md-6 form-group">
                 <label>Quantity</label>
                 @if ($errors->has('quantity'))
                 <span class="has-error error-position">{{ $errors->first('quantity') }}</span>
@@ -57,13 +57,14 @@
             <div class="form-group col-md-12">
                 <textarea class="form-control" name="description" id="description" cols="30" rows="10" placeholder="Description about the car"></textarea>
             </div>
-            {{-- <div class="uploader__box js-uploader__box l-center-box">
-                <div class="uploader__contents">
-                    <label class="button button--secondary" for="fileinput">Select Files</label>
-                    <input id="fileinput" class="uploader__file-input" type="file" multiple value="Select Files">
-                </div>
-                <input class="button button--big-bottom" type="submit" value="Upload Selected Files">
-            </div> --}}
+            <div class="form-group col-md-12">
+                <label>Image</label>
+                @if ($errors->has('photos'))
+                <span class="has-error error-position">{{ $errors->first('photos') }}</span>
+                @endif
+                <input class="form-control" type="file" name="photos[]" multiple />
+            </div>
+            
             <button type="submit" class="btn btn-primary">Add Models</button>
         </form>
     </div>

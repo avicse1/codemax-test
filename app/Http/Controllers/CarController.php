@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Manufacturer;
 use App\Car;
+use App\Image;
 use App\Inventory;
 use Session;
 
@@ -23,6 +24,7 @@ class CarController extends Controller
             'manufacturing_year' => 'required|numeric',
             'registration_number' => 'required',
             'quantity' => 'required',
+            // 'photos' => 'image|mimes:jpeg,png,jpg|max:2048'
         ]);
 
         $car = new Car;
@@ -33,6 +35,7 @@ class CarController extends Controller
         $car->description = $request->description;
         $car->manufacturer_id = $request->manufacturer;
 
+      
         $car->save();
 
         $inventory = new Inventory;
@@ -42,6 +45,18 @@ class CarController extends Controller
         $inventory->count = $request->quantity;
 
         $inventory->save();
+
+        
+        if ($request->hasFile('photos')) {
+            foreach ($request->photos as $photo) {
+                $image = new Image;            
+                $imageName = str_random(10).time() . '.' . $photo->getClientOriginalExtension();
+                $photo->move(public_path('images'), $imageName);
+                $image->car_id = $car->id;
+                $image->image = $imageName;
+                $image->save();
+            }
+        }
 
         Session::flash('success', 'Model added successfully!');
 
