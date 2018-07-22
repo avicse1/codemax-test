@@ -8,3 +8,6 @@
 .error-position {
     float: right;
 }
+.navbar-inverse {
+    border-radius: 0 !important;
+}
