@@ -1,5 +1,6 @@
 @extends('layout')
 @section('content')
+
     <div class="container">
         <h2>Inventory</h2>
         <table id="inventory" class="table table-striped table-bordered" style="width:100%">

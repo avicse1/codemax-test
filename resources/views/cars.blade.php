@@ -4,7 +4,7 @@
         <h2>
             Add Cars
         </h2>
-        <form method="POST" action="{{route('store_cars')}}">
+        <form method="POST" action="{{route('store_cars')}}" enctype="multipart/form-data">
             @csrf
             <div class="col-md-6 form-group">
                 <label>Manufacturer</label>
@@ -50,7 +50,20 @@
             <div class="form-group col-md-12">
                 <textarea class="form-control" name="description" id="description" cols="30" rows="10" placeholder="Description about the car"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg">Add Models</button>
+            {{-- <div class="uploader__box js-uploader__box l-center-box">
+                <div class="uploader__contents">
+                    <label class="button button--secondary" for="fileinput">Select Files</label>
+                    <input id="fileinput" class="uploader__file-input" type="file" multiple value="Select Files">
+                </div>
+                <input class="button button--big-bottom" type="submit" value="Upload Selected Files">
+            </div> --}}
+            <button type="submit" class="btn btn-primary">Add Models</button>
         </form>
     </div>
+    <script>
+    // (function(){
+    //     var options = {};
+    //     $('.js-uploader__box').uploader(options);
+    // }());
+    </script>
 @endsection
