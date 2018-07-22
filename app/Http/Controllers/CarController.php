@@ -22,6 +22,7 @@ class CarController extends Controller
             'color' => 'required',
             'manufacturing_year' => 'required|numeric',
             'registration_number' => 'required',
+            'quantity' => 'required',
         ]);
 
         $car = new Car;
@@ -38,7 +39,7 @@ class CarController extends Controller
 
         $inventory->car_id = $car->id;
         $inventory->manufacturer_id = $request->manufacturer;
-        $inventory->count += 1;
+        $inventory->count = $request->quantity;
 
         $inventory->save();
 

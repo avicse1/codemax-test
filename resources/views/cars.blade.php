@@ -26,26 +26,33 @@
                 <input type="text" class="form-control" name="model_name" id="model_name" placeholder="Enter model name" value="{{old('model_name')}}">
             </div>
                 
-            <div class="col-md-4 form-group">
+            <div class="col-md-3 form-group">
                 <label>Color</label>
                 @if ($errors->has('color'))
                 <span class="has-error error-position">{{ $errors->first('color') }}</span>
                 @endif
                 <input type="text" class="form-control" name="color" id="color" placeholder="Enter color" value="{{old('color')}}">
             </div>
-            <div class="col-md-4 form-group">
+            <div class="col-md-3 form-group">
                 <label>Manufacturing year</label>
                 @if ($errors->has('manufacturing_year'))
                 <span class="has-error error-position">{{ $errors->first('manufacturing_year') }}</span>
                 @endif
                 <input type="text" class="form-control" name="manufacturing_year" id="manufacturing_year" placeholder="Enter Manufacturing Year" value="{{old('manufacturing_year')}}">
             </div>
-            <div class="col-md-4 form-group">
+            <div class="col-md-3 form-group">
                 <label>Registration number</label>
                 @if ($errors->has('registration_number'))
                 <span class="has-error error-position">{{ $errors->first('registration_number') }}</span>
                 @endif
                 <input type="text" class="form-control" name="registration_number" id="registration_number" placeholder="Enter registration number" value="{{old('registration_number')}}">
+            </div>
+            <div class="col-md-3 form-group">
+                <label>Quantity</label>
+                @if ($errors->has('quantity'))
+                <span class="has-error error-position">{{ $errors->first('quantity') }}</span>
+                @endif
+                <input type="text" class="form-control" name="quantity" id="quantity" placeholder="Enter registration number" value="{{old('quantity')}}">
             </div>
             <div class="form-group col-md-12">
                 <textarea class="form-control" name="description" id="description" cols="30" rows="10" placeholder="Description about the car"></textarea>
